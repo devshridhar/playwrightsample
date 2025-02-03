@@ -1,0 +1,14 @@
+tasks:
+  - name: Install Dependencies
+    command: npm install && npx playwright install --with-deps  # ✅ Install Playwright dependencies
+
+  - name: Run Tests on LambdaTest
+    command: npx playwright test
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+github:
+  prebuilds:
+    enabled: true
